@@ -11,8 +11,8 @@ export const Checkbox: React.FC<CheckboxProps> = props => {
 		defaultChecked = false,
 		styles = {},
 		wrapperStyles = {},
-		onChanged,
 		index,
+		onChanged,
 		onSubmitted,
 	} = props;
 	const [checked, setChecked] = useState(defaultChecked);
@@ -24,21 +24,21 @@ export const Checkbox: React.FC<CheckboxProps> = props => {
 
 		if (input === ' ') {
 			setChecked(!checked);
-			onChanged(!checked, label, index);
+			onChanged && onChanged(!checked, label, index);
 		}
 
 		if (input.toLowerCase() === 'y') {
 			setChecked(true);
-			onChanged(true, label, index);
+			onChanged && onChanged(true, label, index);
 		}
 
 		if (input.toLowerCase() === 'n') {
 			setChecked(false);
-			onChanged(false, label, index);
+			onChanged && onChanged(false, label, index);
 		}
 
 		if (key.return) {
-			onSubmitted(checked, label, index);
+			onSubmitted && onSubmitted(checked, label, index);
 		}
 	});
 

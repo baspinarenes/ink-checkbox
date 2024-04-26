@@ -21,6 +21,6 @@ export type CheckboxProps = {
 			label?: Record<Status, Color>;
 		};
 	};
-	onChanged: (checked: boolean, label: string, index?: number) => void;
-	onSubmitted: (checked: boolean, label: string, index?: number) => void;
+	onChanged?: (checked: boolean, label: string, index?: number) => void;
+	onSubmitted?: (checked: boolean, label: string, index?: number) => void;
 };
