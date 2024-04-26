@@ -16,25 +16,25 @@ import {render, Box} from 'ink';
 import {Checkbox} from 'ink-checkbox';
 
 const Playground = () => {
-	const [isFocused, setIsFocused] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
 
-	// Do something
+  // Do something
 
-	return (
-		<Box>
-			<Checkbox
-				key={option.value}
-				label={option.label}
-				focused={isFocused}
-				onChanged={(checked, label, index) => {
-					// Action
-				}}
-				onSubmitted={(checked, label, index) => {
-					// Action
-				}}
-			/>
-		</Box>
-	);
+  return (
+    <Box>
+      <Checkbox
+        key={option.value}
+        label={option.label}
+        focused={isFocused}
+        onChanged={(checked, label, index) => {
+        	// Action
+        }}
+        onSubmitted={(checked, label, index) => {
+        	// Action
+        }}
+      />
+    </Box>
+  );
 };
 
 render(<Playground />);
