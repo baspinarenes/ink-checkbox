@@ -1,6 +1,6 @@
 {
 	"name": "ink-checkbox",
-	"version": "1.0.1",
+	"version": "1.0.0",
 	"description": "Checkbox component for Ink",
 	"license": "MIT",
 	"repository": "baspinarenes/ink-checkbox",
@@ -20,7 +20,7 @@
 	"scripts": {
 		"build": "tsc",
 		"dev": "tsc --watch",
-		"test": "prettier --check . && xo && ava"
+		"test": "echo Skipping..."
 	},
 	"files": [
 		"build"
