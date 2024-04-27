@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Box, Text, useInput} from 'ink';
 import figureSet from 'figures';
-import {CheckboxProps} from '../types.js';
+import {CheckboxEventParams, CheckboxProps} from '../types.js';
 import {calculateStyle} from '../utils.js';
 
 export const Checkbox: React.FC<CheckboxProps> = props => {
@@ -46,7 +46,7 @@ export const Checkbox: React.FC<CheckboxProps> = props => {
 		{isActive: !disableInputHandler},
 	);
 
-	const getEventProps = (checked: boolean) => {
+	const getEventProps = (checked: boolean): CheckboxEventParams => {
 		return {
 			checked,
 			label,
@@ -61,7 +61,7 @@ export const Checkbox: React.FC<CheckboxProps> = props => {
 	);
 
 	return (
-		<Box gap={gap} {...wrapperStyles}>
+		<Box gap={gap} {...wrapperStyles} alignItems="center">
 			<Text color={bulletColor}>{figureSet[icon]}</Text>
 			<Text color={labelColor}>{label}</Text>
 		</Box>

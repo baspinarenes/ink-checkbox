@@ -7,6 +7,12 @@ export type Icon = keyof typeof figureSet;
 export type Color = ForegroundColorName;
 type Props = React.ComponentProps<typeof Box>;
 
+export type CheckboxEventParams = {
+	checked: boolean;
+	label: string;
+	index: number;
+};
+
 export type CheckboxProps = {
 	index?: number;
 	label: string;
@@ -22,22 +28,6 @@ export type CheckboxProps = {
 		};
 	};
 	disableInputHandler?: boolean;
-	onChanged?: ({
-		checked,
-		index,
-		label,
-	}: {
-		checked: boolean;
-		label: string;
-		index: number;
-	}) => void;
-	onSubmitted?: ({
-		checked,
-		index,
-		label,
-	}: {
-		checked: boolean;
-		label: string;
-		index: number;
-	}) => void;
+	onChanged?: (props: CheckboxEventParams) => void;
+	onSubmitted?: (props: CheckboxEventParams) => void;
 };

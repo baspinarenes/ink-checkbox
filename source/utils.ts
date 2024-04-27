@@ -15,9 +15,9 @@ export function calculateStyle(
 	const stylesheet = {
 		gap: styles?.gap || 1,
 		icon: {
-			checked: styles?.icon?.checked || 'bullet',
-			focused: styles?.icon?.focused || 'circle',
-			normal: styles?.icon?.normal || 'circle',
+			checked: styles?.icon?.checked || 'lozenge',
+			focused: styles?.icon?.focused || 'lozengeOutline',
+			normal: styles?.icon?.normal || 'lozengeOutline',
 		},
 		bulletColor: {
 			checked: styles?.color?.bullet?.checked || 'blue',
