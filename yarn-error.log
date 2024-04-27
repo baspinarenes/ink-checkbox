@@ -1,0 +1,108 @@
+Arguments: 
+  /Users/enes.baspinar/.nvm/versions/node/v18.16.1/bin/node /Users/enes.baspinar/.nvm/versions/node/v18.16.1/bin/yarn demo:defaultValue
+
+PATH: 
+  /Users/enes.baspinar/.console-ninja/.bin:/Users/enes.baspinar/.deno/bin:/Users/enes.baspinar/.bun/bin:/Users/enes.baspinar/bin:/Users/enes.baspinar/.nvm/versions/node/v18.16.1/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/Users/enes.baspinar/.orbstack/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/Users/enes.baspinar/.fig/bin:/Users/enes.baspinar/.local/bin:/Users/enes.baspinar/Library/Application Support/JetBrains/Toolbox/scripts:/Users/enes.baspinar/.fzf/bin:/usr/local/bin:/usr/lib/go/bin:/opt/homebrew/opt/dotnet@6/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.16.1
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  SyntaxError: /Users/enes.baspinar/projects/open-source/ink-checkbox/package.json: Unexpected string in JSON at position 686
+      at JSON.parse (<anonymous>)
+      at /Users/enes.baspinar/.nvm/versions/node/v18.16.1/lib/node_modules/yarn/lib/cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (/Users/enes.baspinar/.nvm/versions/node/v18.16.1/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /Users/enes.baspinar/.nvm/versions/node/v18.16.1/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+  	"name": "ink-checkbox",
+  	"version": "1.0.10",
+  	"description": "Checkbox component for Ink",
+  	"license": "MIT",
+  	"repository": "baspinarenes/ink-checkbox",
+  	"author": {
+  		"name": "Enes Başpınar",
+  		"email": "ensbaspinar@gmail.com",
+  		"url": "https://github.com/baspinarenes"
+  	},
+  	"type": "module",
+  	"exports": {
+  		"types": "./build/index.d.ts",
+  		"default": "./build/index.js"
+  	},
+  	"engines": {
+  		"node": ">=16"
+  	},
+  	"scripts": {
+  		"build": "tsc",
+  		"dev": "tsc --watch",
+  		"test": "echo Skipping...",
+  		"publish:npm": "npm run build && npm publish",
+  		"clear-terminal": "clear && printf \u001bc",
+  		"demo:events": "tsc && npm run clear-terminal && node build/playground/events.js"
+  		"demo:defaultValue": "tsc && npm run clear-terminal && node build/playground/default-value.js"
+  	},
+  	"files": [
+  		"build"
+  	],
+  	"keywords": [
+  		"ink",
+  		"react",
+  		"cli",
+  		"checkbox"
+  	],
+  	"dependencies": {
+  		"ink": "^4.1.0",
+  		"ink-big-text": "^2.0.0",
+  		"meow": "^11.0.0"
+  	},
+  	"peerDependencies": {
+  		"react": "^18"
+  	},
+  	"devDependencies": {
+  		"@sindresorhus/tsconfig": "^3.0.1",
+  		"@types/react": "^18.0.32",
+  		"@vdemedes/prettier-config": "^2.0.1",
+  		"ava": "^5.2.0",
+  		"chalk": "^5.2.0",
+  		"eslint-config-xo-react": "^0.27.0",
+  		"eslint-plugin-react": "^7.32.2",
+  		"eslint-plugin-react-hooks": "^4.6.0",
+  		"ink-testing-library": "^3.0.0",
+  		"prettier": "^2.8.7",
+  		"ts-node": "^10.9.1",
+  		"typescript": "^5.0.3",
+  		"xo": "^0.53.1"
+  	},
+  	"ava": {
+  		"extensions": {
+  			"ts": "module",
+  			"tsx": "module"
+  		},
+  		"nodeArguments": [
+  			"--loader=ts-node/esm"
+  		]
+  	},
+  	"xo": {
+  		"extends": "xo-react",
+  		"prettier": true,
+  		"rules": {
+  			"react/prop-types": "off"
+  		}
+  	},
+  	"prettier": "@vdemedes/prettier-config"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

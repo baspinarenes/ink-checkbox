@@ -8,37 +8,9 @@
 $ npm install ink-checkbox --save
 ```
 
-## Usage
+## Demo
 
-```jsx
-import React, {useState} from 'react';
-import {render, Box} from 'ink';
-import {Checkbox} from 'ink-checkbox';
-
-const Playground = () => {
-  const [isFocused, setIsFocused] = useState(false);
-
-  // Do something
-
-  return (
-    <Box>
-      <Checkbox
-        key={option.value}
-        label={option.label}
-        focused={isFocused}
-        onChanged={(checked, label, index) => {
-        	// Action
-        }}
-        onSubmitted={(checked, label, index) => {
-        	// Action
-        }}
-      />
-    </Box>
-  );
-};
-
-render(<Playground />);
-```
+Coming soon.
 
 ## Props
 

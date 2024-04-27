@@ -4,7 +4,7 @@
 		"outDir": "build",
 		"sourceMap": true
 	},
-	"include": ["source"],
+	"include": ["source", "playground"],
 	"ts-node": {
 		"transpileOnly": true,
 		"files": true

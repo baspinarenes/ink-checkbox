@@ -1,3 +1,4 @@
+import events from 'events';
 import {CheckboxProps, Color, Icon} from './types.js';
 
 export function calculateStyle(
@@ -26,8 +27,8 @@ export function calculateStyle(
 		},
 		labelColor: {
 			checked: styles?.color?.label?.checked || 'whiteBright',
-			focused: styles?.color?.label?.checked || 'white',
-			normal: styles?.color?.label?.checked || 'gray',
+			focused: styles?.color?.label?.focused || 'white',
+			normal: styles?.color?.label?.normal || 'gray',
 		},
 	};
 
@@ -37,4 +38,8 @@ export function calculateStyle(
 		bulletColor: stylesheet.bulletColor[status]!,
 		labelColor: stylesheet.labelColor[status]!,
 	};
+}
+
+export function preparePlayground() {
+	events.EventEmitter.prototype.setMaxListeners(100);
 }

@@ -45,6 +45,7 @@ export const Checkbox: React.FC<CheckboxProps> = props => {
 	);
 
 	useEffect(() => {
+		if (initalChecked === checked) return;
 		setChecked(initalChecked);
 	}, [initalChecked]);
 
