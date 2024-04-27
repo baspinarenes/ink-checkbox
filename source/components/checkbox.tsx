@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Box, Text, useInput} from 'ink';
 import figureSet from 'figures';
 import {CheckboxEventParams, CheckboxProps} from '../types.js';
@@ -20,9 +20,7 @@ export const Checkbox: React.FC<CheckboxProps> = props => {
 
 	useInput(
 		(input, key) => {
-			if (!focused) {
-				return;
-			}
+			if (!focused) return;
 
 			if (input === ' ') {
 				setChecked(!checked);
@@ -45,6 +43,10 @@ export const Checkbox: React.FC<CheckboxProps> = props => {
 		},
 		{isActive: !disableInputHandler},
 	);
+
+	useEffect(() => {
+		setChecked(initalChecked);
+	}, [initalChecked]);
 
 	const getEventProps = (checked: boolean): CheckboxEventParams => {
 		return {
