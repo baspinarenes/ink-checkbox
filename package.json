@@ -1,6 +1,6 @@
 {
 	"name": "ink-checkbox",
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"description": "Checkbox component for Ink",
 	"license": "MIT",
 	"repository": "baspinarenes/ink-checkbox",
@@ -21,7 +21,7 @@
 		"build": "tsc",
 		"dev": "tsc --watch",
 		"test": "echo Skipping...",
-		"publish": "npm run build && npm publish"
+		"publish:npm": "npm run build && npm publish"
 	},
 	"files": [
 		"build"

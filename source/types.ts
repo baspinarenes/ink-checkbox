@@ -17,7 +17,7 @@ export type CheckboxProps = {
 	index?: number;
 	label: string;
 	focused: boolean;
-	defaultChecked?: boolean;
+	checked?: boolean;
 	wrapperStyles?: Props;
 	styles?: {
 		gap?: number;
@@ -28,6 +28,6 @@ export type CheckboxProps = {
 		};
 	};
 	disableInputHandler?: boolean;
-	onChanged?: (props: CheckboxEventParams) => void;
-	onSubmitted?: (props: CheckboxEventParams) => void;
+	onChanged?: ({checked, index, label}: CheckboxEventParams) => void;
+	onSubmitted?: ({checked, index, label}: CheckboxEventParams) => void;
 };

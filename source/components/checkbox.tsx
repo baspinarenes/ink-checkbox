@@ -8,7 +8,7 @@ export const Checkbox: React.FC<CheckboxProps> = props => {
 	const {
 		label,
 		focused = false,
-		defaultChecked = false,
+		checked: initalChecked = false,
 		styles = {},
 		wrapperStyles = {},
 		index,
@@ -16,7 +16,7 @@ export const Checkbox: React.FC<CheckboxProps> = props => {
 		onSubmitted,
 		disableInputHandler = false,
 	} = props;
-	const [checked, setChecked] = useState(defaultChecked);
+	const [checked, setChecked] = useState(initalChecked);
 
 	useInput(
 		(input, key) => {
