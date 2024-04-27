@@ -1,6 +1,6 @@
 {
 	"name": "ink-checkbox",
-	"version": "1.0.4",
+	"version": "1.0.7",
 	"description": "Checkbox component for Ink",
 	"license": "MIT",
 	"repository": "baspinarenes/ink-checkbox",
@@ -20,7 +20,8 @@
 	"scripts": {
 		"build": "tsc",
 		"dev": "tsc --watch",
-		"test": "echo Skipping..."
+		"test": "echo Skipping...",
+		"publish": "npm run build && npm publish"
 	},
 	"files": [
 		"build"
@@ -33,8 +34,10 @@
 	],
 	"dependencies": {
 		"ink": "^4.1.0",
-		"meow": "^11.0.0",
-		"react": "^18.2.0"
+		"meow": "^11.0.0"
+	},
+	"peerDependencies": {
+		"react": "^18"
 	},
 	"devDependencies": {
 		"@sindresorhus/tsconfig": "^3.0.1",

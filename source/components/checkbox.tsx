@@ -14,33 +14,45 @@ export const Checkbox: React.FC<CheckboxProps> = props => {
 		index,
 		onChanged,
 		onSubmitted,
+		disableInputHandler = false,
 	} = props;
 	const [checked, setChecked] = useState(defaultChecked);
 
-	useInput((input, key) => {
-		if (!focused) {
-			return;
-		}
+	useInput(
+		(input, key) => {
+			if (!focused) {
+				return;
+			}
 
-		if (input === ' ') {
-			setChecked(!checked);
-			onChanged && onChanged(!checked, label, index);
-		}
+			if (input === ' ') {
+				setChecked(!checked);
+				onChanged && onChanged(getEventProps(!checked));
+			}
 
-		if (input.toLowerCase() === 'y') {
-			setChecked(true);
-			onChanged && onChanged(true, label, index);
-		}
+			if (input.toLowerCase() === 'y') {
+				setChecked(true);
+				onChanged && onChanged(getEventProps(true));
+			}
 
-		if (input.toLowerCase() === 'n') {
-			setChecked(false);
-			onChanged && onChanged(false, label, index);
-		}
+			if (input.toLowerCase() === 'n') {
+				setChecked(false);
+				onChanged && onChanged(getEventProps(false));
+			}
 
-		if (key.return) {
-			onSubmitted && onSubmitted(checked, label, index);
-		}
-	});
+			if (key.return) {
+				onSubmitted && onSubmitted(getEventProps(checked));
+			}
+		},
+		{isActive: !disableInputHandler},
+	);
+
+	const getEventProps = (checked: boolean) => {
+		return {
+			checked,
+			label,
+			index: index ?? -1,
+		};
+	};
 
 	const {gap, icon, bulletColor, labelColor} = calculateStyle(
 		styles,

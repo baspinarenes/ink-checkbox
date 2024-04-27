@@ -5,7 +5,7 @@
 ## Install
 
 ```
-$ npm install ink-checkbox
+$ npm install ink-checkbox --save
 ```
 
 ## Usage
